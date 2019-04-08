@@ -51,8 +51,13 @@ def parse_file(path, file_name, output):
             if current == 'match':
                 match += '<br>' + line
 
+    branch = 'master' if path == './' else path
     # output.write("| {} | {} | {} | {} |\n".format(name, description, match, file_name))
-    output.write(f"| **{name}**<br>[{file_name}](../{('master' if path == './' else path)}/{file_name} \"{name}\") | {description}<br>_Match:_<br>{match}\n")
+    # source: github.com/aljgom/UserScripts/blob/master/airbnb.user.js
+    # install: aljgom.github.io/master/airbnb.user.js
+    output.write(f"| **testtest{name}**<br>[{file_name}](../{branch}/{file_name} \"{name}\") | {description}<br>_Match:_<br>{match}\n")
+
+
 
 
 def create_table(path):
